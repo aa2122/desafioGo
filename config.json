@@ -1,0 +1,8 @@
+{
+    "ServerPort"    : "3306",
+    "MySQLHost"   : "abec9e31d77b",
+    "MySQLUser"   : "root@localhost",
+    "MySQLPwd"    : "",
+    "Database"      : "empresas"
+    
+}

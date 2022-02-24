@@ -1,0 +1,51 @@
+syntax = "proto3";
+
+package twirp.desafioGo; 
+
+
+
+option go_package = "./rpc";
+
+service EmpresaService {
+
+  
+    rpc AddEmpresa(Empresa) returns (Empresa);
+    rpc UpdateEmissoes(UpdateEmissoesParam) returns (Empresa);
+    rpc GetEmpresas(Empty) returns (ListEmpresas);
+    rpc GetEmpresa(ParamId) returns (Empresa);
+    rpc DeleteEmpresaById(ParamId) returns(Empty);
+    rpc DeleteEmpresaByNome(ParamNome) returns(Empty);
+  }
+  
+  message Empresa {
+        // UUID id = 1;
+        // string id =1;
+        string nome = 2;
+        string atividade = 3;
+        string sede = 4;
+        string emissoes =5;
+  }
+
+  message ListEmpresas{
+      repeated Empresa empresas =1;
+  }
+
+
+  message ParamId {
+    uint64 id = 1;
+  }
+
+  message ParamNome {
+    string nome = 1;
+  }
+
+  message ParamEmissoes{
+    string emissoes=1;
+  }
+
+  message UpdateEmissoesParam{
+    uint64 id=1;
+    string emissoes=2;
+  }
+
+  message Empty{}
